@@ -30,7 +30,7 @@ concurrency:
 env:
   # The one variable that separates the arms: on baseline, action-checkout
   # skips its Set up Chalk step entirely.
-  CHALK_ON: ${{ github.event_name == 'workflow_dispatch' && inputs.leg != 'baseline' }}
+  CHALK_ON: ${{ inputs.leg == 'instrumented' }}
   SAIL_VERSION: "0.13.1"
   RISCV_TOOLCHAIN_VERSION: "2026.08.27"
   LLVM_VERSION: "23"
